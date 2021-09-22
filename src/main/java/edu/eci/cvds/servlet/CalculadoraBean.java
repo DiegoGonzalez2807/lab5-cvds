@@ -3,7 +3,6 @@ package edu.eci.cvds.servlet;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Dictionary;
 import java.util.HashMap;
 
 import javax.annotation.ManagedBean;
