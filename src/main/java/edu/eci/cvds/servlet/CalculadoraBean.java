@@ -1,13 +1,15 @@
 package edu.eci.cvds.servlet;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Dictionary;
 import java.util.HashMap;
 
 import javax.annotation.ManagedBean;
 import javax.faces.bean.ApplicationScoped;
 
-@ManagedBean(name = CalculadoraBean)
+@ManagedBean(value = "CalculadoraBean")
 @ApplicationScoped
 
 
@@ -34,7 +36,7 @@ public class CalculadoraBean {
     public double getMedia(){return this.media;}
     public void setMedia(double media){this.media = media;}
 
-    public ArrayList<double> getModa(){return this.moda;}
+    public ArrayList<Double> getModa(){return this.moda;}
     public void setModa(ArrayList<Double> moda){this.moda = moda;}
 
     public double getDesviacionEstandar(){return this.desviacionEstandar;}
@@ -44,7 +46,7 @@ public class CalculadoraBean {
     public void setVarianza(double varianza){this.varianza = varianza;}
 
     public int getLongitud(){return this.longitud;}
-    public void setLongitud(int longitud){this.longitud = longitud}
+    public void setLongitud(int longitud){this.longitud = longitud;}
 
     /**
      * Funcion encargada de el calculo del promedio de los datos ingresados
@@ -57,9 +59,9 @@ public class CalculadoraBean {
         for(double dato:datos){
             suma += dato;
         }
-        if(datos.size() > 0)? media = suma /datos.size;media=0;
+        media = (datos.size() > 0) ? suma /datos.size() :0 ;
         setMedia(media);
-        return media
+        return media;
     }
 
     /**
@@ -73,7 +75,7 @@ public class CalculadoraBean {
         double desviacionEstandar = 0;
         if(datos.size() >0 ){
             for(double dato:datos){
-                numerador += Math.abs(dato-media)^2;
+                numerador += Math.pow(Math.abs(dato-media), 2);
             }
             desviacionEstandar = Math.sqrt(numerador/datos.size());
         }
@@ -87,17 +89,33 @@ public class CalculadoraBean {
      * @return Double --> Varianza de los datos
      */
     public double CalcularVarianza(ArrayList<Double> datos){
-        double desviacionEstandar = desviacionEstandar(datos);
-        double varianza = desviacionEstandar^2;
+        Double desviacionEstandar = CalcularDesviacionEstandar(datos);
+        Double varianza = Math.pow(desviacionEstandar,2);
         setVarianza(varianza);
         return varianza;
     }
 
     public ArrayList<Double> calcularModa(ArrayList<Double> datos){
-        HashMap<> listaModa = new HashMap<>();      
-        
+        HashMap<Double,Integer> listaModa = new HashMap<Double,Integer>();
+        ArrayList<Double> moda = new ArrayList<Double>();
+        for(Double data: datos){
+            if(!listaModa.containsKey(data)){
+                listaModa.put(data, Collections.frequency(datos, data));
+            }
+        }
+        //Parte para sacar mayor valor
+        Collection<Integer> values = listaModa.values();
+        //Sacar maximo de la coleccion
+        Integer maxValue = Collections.max(values);
+        for(double key: listaModa.keySet()){
+            if(maxValue.equals(listaModa.get(key))){
+                moda.add(key);
+            }
+        }
+        return moda;
     }
 
-
-
+    public void restart(){
+        listaNumeros.clear();
+    }
 }
