@@ -35,16 +35,23 @@ public class ActualServlet extends HttpServlet {
             message = Service.todosToHTMLTable(todoArray);
             System.out.print(message);
         }
+        //En caso de que el parametro del identificador no tenga nada en el o no se encuentre
         catch(FileNotFoundException fileNotFoundException){
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
             message = Service.getHTMLError(resp.getStatus(), "No existe Item con el identificador dado");
-
+        }
+        //En caso que no se pase parametro opcional o no sea numero entero
+        catch(NumberFormatException numberFormatException){
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            message = Service.getHTMLError(resp.getStatus(), "Requerimiento Invalido.")
+        //En caso que haya malformaciones en la URL
         }
         catch(MalformedURLException malformedURLException){
             resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         }
+        //En cualquier otro caso de excepcion
         catch(Exception exception){
-            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             message = Service.getHTMLError(resp.getStatus(), "Requerimiento Invalido.");
         }
         finally{

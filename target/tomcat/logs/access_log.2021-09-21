@@ -36,3 +36,4 @@
 0:0:0:0:0:0:0:1 - - [21/Sep/2021:23:06:12 -0500] "GET /ActualServlet HTTP/1.1" 500 - http-bio-8080-exec-5 1
 0:0:0:0:0:0:0:1 - - [21/Sep/2021:23:08:58 -0500] "GET /ActualServlet?id=100 HTTP/1.1" 200 - http-bio-8080-exec-6 157246
 0:0:0:0:0:0:0:1 - - [21/Sep/2021:23:08:58 -0500] "GET /ActualServlet?id=1 HTTP/1.1" 200 - http-bio-8080-exec-7 138283
+0:0:0:0:0:0:0:1 - - [21/Sep/2021:23:09:20 -0500] "GET /ActualServlet?id=1 HTTP/1.1" 200 153 http-bio-8080-exec-1 2139
