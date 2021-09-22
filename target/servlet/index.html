@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>ActualServlet Formulary</h1>
+        <p>Please input the number ("ID" of ToDo):</p>
+        <!--Script usado para revisar si el ID de Todo existe o si no se pasa del rango numerico valido-->
+        <script>
+            function ValidateNumber(){
+                let x = document.forms["TodoList"]["ID"].value;
+                if(isNaN(x) || x <1 || x>200){
+                    alert("Número no válido, por favor ingrese otro");
+                    return false;
+                }
+            }
+        </script>
+        <form name="TodoList" action="http://localhost:8080/ActualServlet" method="POST">
+        <!--El tipo texto se usa para crear en la pagina el cuadro de texto donde se pondra el numero-->
+        <input type="text" id="ID" name="id"><br><br>
+        <!--El tipo submit es el valor que se va a revisar en la funcion de validacion de numero-->
+        <!--Tambien hace aparecer el boton con el valor de "Buscar"-->
+        <input type="submit" onclick="ValidateNumber()" value="Buscar">
+    </body>
+</html>
