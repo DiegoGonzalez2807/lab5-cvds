@@ -36,11 +36,15 @@ public class ActualServlet extends HttpServlet {
         }
         catch(FileNotFoundException fileNotFoundException){
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
-            message = Service.getHTMLError();
+            message = Service.getHTMLError(resp.getStatus(), "No existe Item con el identificador dado");
 
         }
         catch(MalformedURLException malformedURLException){
             resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+        }
+        catch(Exception exception){
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            message = Service.getHTMLError(resp.getStatus(), "Requerimiento Invalido.");
         }
         finally{
 
