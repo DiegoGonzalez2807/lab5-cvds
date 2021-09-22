@@ -33,6 +33,7 @@ public class ActualServlet extends HttpServlet {
             ArrayList<Todo> todoArray = new ArrayList<>();
             todoArray.add(newTodo);
             message = Service.todosToHTMLTable(todoArray);
+            System.out.print(message);
         }
         catch(FileNotFoundException fileNotFoundException){
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
@@ -47,7 +48,7 @@ public class ActualServlet extends HttpServlet {
             message = Service.getHTMLError(resp.getStatus(), "Requerimiento Invalido.");
         }
         finally{
-
+            responseWriter.write(message);
         }
     }
 }
