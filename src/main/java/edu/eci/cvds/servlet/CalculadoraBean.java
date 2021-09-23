@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import javax.faces.bean.ManagedBean;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.ManagedBean;
 
 
 @ManagedBean(name = "CalculadoraBean")
@@ -16,7 +16,6 @@ public class CalculadoraBean {
     ArrayList<Double> listaNumeros;
     private double media;
     //ArrayList<Double> moda;
-    private double moda = 123;
     private double desviacionEstandar;
     private double varianza;
     private int longitud;
