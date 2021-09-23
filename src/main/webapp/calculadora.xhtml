@@ -1,12 +1,23 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3c.org/1999/xhtml"
-xmlns:h="http://xmlns.jcp.org/jsf/html"
-xmlns:p="http://primefaces.org/ui">
- <h:head></h:head>
- <h:body>
+<html xmlns="http://www.w3c.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:p="http://primefaces.org/ui">
+<h:head></h:head>
+<h:body>
     <h:form id="calculadora_form">
+        <p:outputLabel style="display : none" ></p:outputLabel>/>
+        <p:inputText />
+
+        <h5>Promedio</h5>
+        <p:outputLabel value="#{CalculadoraBean.media}" ></p:outputLabel>
+
+        <h5>Desviacion Estandar</h5>
+        <p:outputLabel value="#{CalculadoraBean.desviacionEstandar}"></p:outputLabel>
+
+            <h5>Varianza</h5>
+            <p.outputLabel value="#{CalculadoraBean.varianza}" ></p.outputLabel>
+
+            <h5>Moda</h5>
+            <p:ouputLabel value="#{CalculadoraBean.moda}/"></p:ouputLabel>
+
     </h:form>
-    <p:outputLabel style = "display : none">
-    </p:outputLabel>
 </h:body>
 </html>
