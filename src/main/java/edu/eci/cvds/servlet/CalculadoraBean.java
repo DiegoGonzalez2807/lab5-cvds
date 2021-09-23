@@ -135,6 +135,7 @@ public class CalculadoraBean {
                 moda.add(key);
             }
         }
+        System.out.print("obj");
         //return moda;
     }
 
