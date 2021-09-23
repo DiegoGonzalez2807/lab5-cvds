@@ -53,7 +53,10 @@ Si hacemos uso del comando ```-v``` se nos mostrara ademas de la misma informaci
   En este caso se envio un ```id``` valido, por lo cual se nos muestra una pequeña tabla.  
 ## PARTE III  
   Por medio de scripts nos es posible generar en la pagina creada un servicio que lea datos que ingrese el usuario, en este caso le pedimos a el susuario el ```id```.  
-  ![img20]
+  ![img20](Imagenes/PARTE III/img20.jpg)  
+  Vemos que el usuario ingresa 1, al compararlo con la pagina de ActualServlet con ```id=1``` vemos que es igual a la pagina que fuimos enviados al enviar el id, en la caja de texto.  
+  ![img21](Imagenes/PARTE III/img21.jpg)  
+  ![img22](Imagenes/PARTE III/img22.jpg)
   
   
   
