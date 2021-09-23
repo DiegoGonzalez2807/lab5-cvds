@@ -43,14 +43,20 @@ Si hacemos uso del comando ```-v``` se nos mostrara ademas de la misma informaci
   ![img13](https://github.com/DiegoGonzalez2807/lab5-cvds/blob/7db75f31b211017e4d92314665e0e70c52d6a551/Imagenes/PARTE%20II/img13.png)  la cual 
   
   Realizamos una aplicacion la cual nos retorne un mensaje de acuerdo al paramtro que se le envie, si el ```id``` es valido o no.  
-  ![img16](https://github.com/DiegoGonzalez2807/lab5-cvds/blob/7db75f31b211017e4d92314665e0e70c52d6a551/Imagenes/PARTE%20II/img16.png) 
+  ![img16](https://github.com/DiegoGonzalez2807/lab5-cvds/blob/7db75f31b211017e4d92314665e0e70c52d6a551/Imagenes/PARTE%20II/img16.png)  
   En este caso no se envio ningun parametro por lo cual se espera que mande una pagina que nos muestre un error.  
   ![img17](https://github.com/DiegoGonzalez2807/lab5-cvds/blob/7db75f31b211017e4d92314665e0e70c52d6a551/Imagenes/PARTE%20II/img17.png)  
   En este caso se envia un ```id``` que no es valido, puesto que es un _String_, por lo cual se manda mensaje de error.  
-  ![img18](https://github.com/DiegoGonzalez2807/lab5-cvds/blob/7db75f31b211017e4d92314665e0e70c52d6a551/Imagenes/PARTE%20II/img18.png) 
+  ![img18](https://github.com/DiegoGonzalez2807/lab5-cvds/blob/7db75f31b211017e4d92314665e0e70c52d6a551/Imagenes/PARTE%20II/img18.png)  
   Para este caso se envia un ```id``` que no esta en el rango valido, por lo cual se envia un mensaje de error.  
   ![img19](https://github.com/DiegoGonzalez2807/lab5-cvds/blob/7db75f31b211017e4d92314665e0e70c52d6a551/Imagenes/PARTE%20II/img19.png)  
   En este caso se envio un ```id``` valido, por lo cual se nos muestra una pequeña tabla.  
+## PARTE III  
+  Por medio de scripts nos es posible generar en la pagina creada un servicio que lea datos que ingrese el usuario, en este caso le pedimos a el susuario el ```id```.  
+  ![img20](https://github.com/DiegoGonzalez2807/lab5-cvds/blob/0e1d0e1a355832af6bfc6435a3b165ee79303f0e/Imagenes/PARTE%20III/img20.jpg)  
+  Vemos que el usuario ingresa 1, al compararlo con la pagina de ActualServlet con ```id=1``` vemos que es igual a la pagina que fuimos enviados al enviar el id, en la caja de texto.  
+  ![img21](https://github.com/DiegoGonzalez2807/lab5-cvds/blob/232851d38953eb19353e013370a2f736a747f730/Imagenes/PARTE%20III/img21.jpg)  
+  ![img22](https://github.com/DiegoGonzalez2807/lab5-cvds/blob/232851d38953eb19353e013370a2f736a747f730/Imagenes/PARTE%20III/img22.jpg)  
   
   
   
