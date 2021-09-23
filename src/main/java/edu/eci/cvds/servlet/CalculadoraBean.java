@@ -4,29 +4,54 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import javax.faces.bean.ManagedBean;
+import javax.enterprise.context.SessionScoped;
 
-import javax.annotation.ManagedBean;
-import javax.faces.bean.ApplicationScoped;
 
-@ManagedBean(value = "CalculadoraBean")
-@ApplicationScoped
+@ManagedBean(name = "CalculadoraBean")
+@SessionScoped
 
 
 public class CalculadoraBean {
     ArrayList<Double> listaNumeros;
-    double media;
-    ArrayList<Double> moda;
-    double desviacionEstandar;
-    double varianza;
-    int longitud;
+    private double media;
+    //ArrayList<Double> moda;
+    private double moda = 123;
+    private double desviacionEstandar;
+    private double varianza;
+    private int longitud;
 
     public CalculadoraBean(){
         listaNumeros = new ArrayList<Double>();
         media = 0;
-        moda = new ArrayList<Double>();
+        //moda = new ArrayList<Double>();
         desviacionEstandar = 0;
         varianza = 0;
         longitud = 0;
+    }
+
+    public void calcular(String lista){
+        try{
+            conversionEntrada(lista);
+            calcularPromedio(this.listaNumeros);
+            calcularModa(this.listaNumeros);
+            CalcularDesviacionEstandar(this.listaNumeros);
+            CalcularVarianza(this.listaNumeros);
+        }
+        catch(Exception exception){
+            conversionEntrada(lista);
+            calcularPromedio(this.listaNumeros);
+            calcularModa(this.listaNumeros);
+            CalcularDesviacionEstandar(this.listaNumeros);
+            CalcularVarianza(this.listaNumeros);
+        }
+    }
+
+    public void conversionEntrada(String lista){
+        String[] listaTemporal = lista.split(";");
+        for(String value:listaTemporal){
+            listaNumeros.add(Double.parseDouble(value));
+        }
     }
 
     public ArrayList<Double> getDatos(){return this.listaNumeros;}
@@ -35,8 +60,8 @@ public class CalculadoraBean {
     public double getMedia(){return this.media;}
     public void setMedia(double media){this.media = media;}
 
-    public ArrayList<Double> getModa(){return this.moda;}
-    public void setModa(ArrayList<Double> moda){this.moda = moda;}
+    //public ArrayList<Double> getModa(){return this.moda;}
+    //public void setModa(ArrayList<Double> moda){this.moda = moda;}
 
     public double getDesviacionEstandar(){return this.desviacionEstandar;}
     public void setDesviacionEstandar(double desviacionEstandar){this.desviacionEstandar = desviacionEstandar;}
@@ -52,7 +77,7 @@ public class CalculadoraBean {
      * @param datos --> Lista de numeros a la cual se le sacara la media
      * @return Double--> Media de los numero ingresados
      */
-    public double calcularPromedio(ArrayList<Double> datos){
+    public void calcularPromedio(ArrayList<Double> datos){
         double suma = 0;
         double media = 0;
         for(double dato:datos){
@@ -60,7 +85,7 @@ public class CalculadoraBean {
         }
         media = (datos.size() > 0) ? suma /datos.size() :0 ;
         setMedia(media);
-        return media;
+        //return media;
     }
 
     /**
@@ -68,9 +93,9 @@ public class CalculadoraBean {
      * @param datos --> Lista de numeros a los cuales se le saca la desviacion estandar
      * @return Double --> Desviacion estandar de los datos
      */
-    public double CalcularDesviacionEstandar(ArrayList<Double> datos){
+    public void CalcularDesviacionEstandar(ArrayList<Double> datos){
         double numerador = 0;
-        double media = calcularPromedio(datos);
+        //double media = calcularPromedio(datos);
         double desviacionEstandar = 0;
         if(datos.size() >0 ){
             for(double dato:datos){
@@ -79,7 +104,7 @@ public class CalculadoraBean {
             desviacionEstandar = Math.sqrt(numerador/datos.size());
         }
         setDesviacionEstandar(desviacionEstandar);
-        return desviacionEstandar;
+        //return desviacionEstandar;
     }
 
     /**
@@ -87,14 +112,14 @@ public class CalculadoraBean {
      * @param datos --> Lista de numeros a los cuales se le saca la varianza
      * @return Double --> Varianza de los datos
      */
-    public double CalcularVarianza(ArrayList<Double> datos){
-        Double desviacionEstandar = CalcularDesviacionEstandar(datos);
+    public void CalcularVarianza(ArrayList<Double> datos){
+        //Double desviacionEstandar = CalcularDesviacionEstandar(datos);
         Double varianza = Math.pow(desviacionEstandar,2);
         setVarianza(varianza);
-        return varianza;
+        //return varianza;
     }
 
-    public ArrayList<Double> calcularModa(ArrayList<Double> datos){
+    public void calcularModa(ArrayList<Double> datos){
         HashMap<Double,Integer> listaModa = new HashMap<Double,Integer>();
         ArrayList<Double> moda = new ArrayList<Double>();
         for(Double data: datos){
@@ -111,10 +136,10 @@ public class CalculadoraBean {
                 moda.add(key);
             }
         }
-        return moda;
+        //return moda;
     }
 
     public void restart(){
-        listaNumeros.clear();
+        this.listaNumeros = new ArrayList<Double>();
     }
 }

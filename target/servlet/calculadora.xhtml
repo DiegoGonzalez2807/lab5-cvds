@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>CalculadoraBean</title>
+    </h:head>
+    <body>
+        <f:view>
+            <h:form id="calculadora_form">
+                <h:panelGrid columns="2">
+                    <!--Elemento oculto para el valor de la moda-->
+                    <p:outputLabel value="Digitar la lista" for="digitar"/>
+                    <p:inputText id="ListaCalcular" type="text"/>    
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+    </body>
+</html>
+
