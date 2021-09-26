@@ -141,5 +141,6 @@ public class CalculadoraBean {
 
     public void restart(){
         this.listaNumeros = new ArrayList<Double>();
+        System.out.print("PRUEBA 123");
     }
 }
