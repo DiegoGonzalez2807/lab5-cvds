@@ -3,7 +3,7 @@
   <display-name>Archetype Created Web Application</display-name>
    <servlet>
       <welcome-file-list>
-            <welcome-file>faces/calculadora.xhtml</welcome-file>
+            <welcome-file>faces/*</welcome-file>
       </welcome-file-list>
 
       <servlet-name>Faces Servlet</servlet-name>
