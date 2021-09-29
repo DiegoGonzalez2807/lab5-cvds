@@ -13,7 +13,7 @@
    </servlet-mapping>
 
    <welcome-file-list>
-            <welcome-file>faces/index.jsp</welcome-file>
+            <welcome-file>faces/calculadora.xhtml</welcome-file>
    </welcome-file-list>
 
 </web-app>
