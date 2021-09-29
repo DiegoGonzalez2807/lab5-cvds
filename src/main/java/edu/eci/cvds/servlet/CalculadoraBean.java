@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 
 
 @ManagedBean(name = "CalculadoraBean")
-@SessionScoped
+@ApplicationScoped
 
 
 public class CalculadoraBean {
@@ -141,6 +143,5 @@ public class CalculadoraBean {
 
     public void restart(){
         this.listaNumeros = new ArrayList<Double>();
-        System.out.print("PRUEBA 123");
     }
 }
