@@ -17,7 +17,7 @@ import javax.faces.bean.ManagedBean;
 public class CalculadoraBean {
     ArrayList<Double> listaNumeros;
     private double media;
-    //ArrayList<Double> moda;
+    private double modas;
     private double desviacionEstandar;
     private double varianza;
     private int longitud;
@@ -25,10 +25,10 @@ public class CalculadoraBean {
     public CalculadoraBean(){
         listaNumeros = new ArrayList<Double>();
         media = 0;
-        //moda = new ArrayList<Double>();
         desviacionEstandar = 0;
         varianza = 0;
         longitud = 0;
+        modas = 0;
     }
 
     public void calcular(String lista){
@@ -122,7 +122,6 @@ public class CalculadoraBean {
 
     public void calcularModa(ArrayList<Double> datos){
         HashMap<Double,Integer> listaModa = new HashMap<Double,Integer>();
-        ArrayList<Double> moda = new ArrayList<Double>();
         for(Double data: datos){
             if(!listaModa.containsKey(data)){
                 listaModa.put(data, Collections.frequency(datos, data));
@@ -134,11 +133,9 @@ public class CalculadoraBean {
         Integer maxValue = Collections.max(values);
         for(double key: listaModa.keySet()){
             if(maxValue.equals(listaModa.get(key))){
-                moda.add(key);
+                this.modas = key;
             }
         }
-        System.out.print("obj");
-        //return moda;
     }
 
     public void restart(){

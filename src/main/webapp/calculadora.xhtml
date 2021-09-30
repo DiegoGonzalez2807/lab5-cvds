@@ -10,19 +10,25 @@
     </h:head>
     <h:body>
         <style type="text/css">
+            /*Cambia el grosor de la letra a 700*/
             .fw-700{
                 font-weight: 700;
             }
+            /*Cambia el grosor de la letra a 300*/
             .fw-300{
                 font-weight: 300;
             }
+            /*Se usa para que el botón sea más grande y poder ponerlo en otra parte*/
             .boton{
                 height:20px; 
                 position:relative; 
                 width:100px; 
                 top:50%; 
-                left:42%; 
+                left:23%;
+                margin-right: 1rem;
+                
             }
+            /*Cambia de posicion de los valores que nos va a dar la calculadora*/
             .cambioPosicion{
                 position:relative; 
                 left:20%;
@@ -33,10 +39,13 @@
             .centrarTexto{
                 text-align: center;
             }
+            /*Encargado de poner color al header de arriba, lo deja cafe oscuro*/
             .site-header{
                 background-color: rgb(37, 32, 32);
                 padding: 1rem 0 3rem 0;
             }
+            /*Se encarga de darle el color y tamaño a la letra del menu
+            Como por ejemplo a Varianza, Moda, Mediana y Desviación*/
             .navegacion a {
                 color : white;
                 text-decoration: none;
@@ -47,15 +56,14 @@
                 margin-right: 2rem;
                 width: 22%;
             }
+            /*Encargado de darle color al footer, es donde dice quienes fueron los creadores*/
             .site-footer{
                 background-color: rgb(37, 32, 32);
                 margin: 0;
             }
-            .site-footer nav{
-                display: block;
-            }
+            /*Se encarga de las medidas del footer*/
             .seccion{
-                margin-top: 2rem;
+                margin-top: 11rem;
                 margin-bottom: 2rem;
             }
             .contenedor-footer{
@@ -63,13 +71,24 @@
                 padding: 2rem 0;
                 text-align: center;
             } 
+            /*Se encarga de partir la pagina a la mitad*/
             .contenido{
                 display: grid;
                 grid-template-columns: 50% 50%;
             }
+            .margenes{
+                margin-top: 2rem;
+                margin-left: 3rem;
+            }
+            .margenesValores{
+                margin-left: 15rem;
+            }
+            .margenes2{
+                margin-left: 15rem;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
         </style>
-
-
             <header class="site-header">
                 <h1 class="fw-300 centrarTexto">Calculadora Bean</h1>
                 <nav id="navegacion" class='navegacion'>
@@ -80,32 +99,38 @@
                 </nav>
             </header>
             <h:form id="calculadora_form">
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="Lista a calcular:"/> 
-			        <h:inputText id="lista" type="text" binding="#{input}" /> 
+               
+                    <h:outputLabel  style="margin-left: 1rem;" value="Lista a calcular:"/> 
+			        <h:inputText class="margenes" id="lista" type="text" binding="#{input}" /> 
                     <div class="contenido">
                         <div>
-                            <!--Titulo de Media-->
-                            <p:outputLabel class="fw-700" value="Media"></p:outputLabel>
-                            <!--Valor de la media-->
-                            <p:outputLabel class="cambioPosicion" value="#{CalculadoraBean.media}"></p:outputLabel>
-                        </div>
-                        <div>
-                            <!--Titulo de Desviación estandar-->
-                            <p:outputLabel class="fw-700" value="Desviación estandar"></p:outputLabel>
-                            <!--Valor de la Desviación estandar-->
-                            <p:outputLabel class="cambioPosicion" value="#{CalculadoraBean.desviacionEstandar}"></p:outputLabel>
-
-                            <!--Titulo de Varianza-->
-                            <p:outputLabel class="fw-700" value="Varianza"></p:outputLabel>
-                            <!--Valor de la Varianza-->
-                            <p:outputLabel class="cambioPosicion" value="#{CalculadoraBean.varianza}"></p:outputLabel>
-
                             <h:commandButton class="boton" value="Calcular"  update="calculadora_form" actionListener="#{CalculadoraBean.calcular(input.value)}"/>
                             <h:commandButton class="boton" value="Reiniciar" update="calculadora_form" actionListener="#{CalculadoraBean.restart}"/>
                         </div>
+                        <div>
+                            <h:panelGrid columns="2">
+                                <!--Titulo de Media-->
+                                <p:outputLabel class="fw-700 margenesValores" value="Media"></p:outputLabel>
+                                <!--Valor de la media-->
+                            <p:outputLabel class="cambioPosicion margenes2" value="#{CalculadoraBean.media}"></p:outputLabel>
+                                <!--Titulo de Desviación estandar-->
+                                <p:outputLabel class="fw-700 margenesValores" value="Desviación estandar"></p:outputLabel>
+                                <!--Valor de la Desviación estandar-->
+                                <p:outputLabel class="cambioPosicion margenes2" value="#{CalculadoraBean.desviacionEstandar}"></p:outputLabel>
+
+                                <!--Titulo de Varianza-->
+                                <p:outputLabel class="fw-700 margenesValores" value="Varianza"></p:outputLabel>
+                                <!--Valor de la Varianza-->
+                                <p:outputLabel class="cambioPosicion margenes2" value="#{CalculadoraBean.varianza}"></p:outputLabel>
+
+                                <!--Titulo de Moda-->
+                                <p:outputLabel class="fw-700 margenesValores" value="Moda"></p:outputLabel>
+                                <!--Valor de la Moda-->
+                                <p:outputLabel class="cambioPosicion margenes2" value="#{CalculadoraBean.modas}"></p:outputLabel>
+                            </h:panelGrid>
+                        </div>
                     </div>
-                </h:panelGrid>
+               
             </h:form>
             <footer class="site-footer seccion">
                 <div class="contenedor contenedor-footer">
