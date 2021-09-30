@@ -1,0 +1,44 @@
+/*HEADER*/
+.site-header{
+    background-color: rgb(37, 32, 32);
+    padding: 1rem 0 3rem 0;
+}
+/*Se encarga de que el tamaño del texto sea de 300*/
+.fw-300{
+    font-weight: 300;
+}
+h1{
+    color: gray;
+}
+/*Centra el texto deseado*/
+.centrarTexto{
+    text-align: center;
+}
+
+/********************PANEL DE NAVEGACION*********************/
+/*Para cada opción del panel de navegación, se coloca una letra de color blanco y le da un margen entre cada boton */
+.navegacion a {
+    color : white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.8rem;
+    display: inline-block;
+    margin-bottom: 1.4rem;
+    margin-right: 2rem;
+    width: 22%;
+}
+
+/********************CONTENIDO*********************/
+.contenido{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+
+div.vertical-line{
+    width: 1px; 
+    background-color: black; 
+    height: 100%; 
+    float: left; 
+  }
+

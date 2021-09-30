@@ -13,12 +13,9 @@
       <servlet-name>Faces Servlet</servlet-name>
       <url-pattern>/faces/*</url-pattern>
    </servlet-mapping>
-<<<<<<< HEAD
    <welcome-file-list>
       <welcome-file>calculadora.xhtml</welcome-file>
    </welcome-file-list>
-=======
->>>>>>> 1a3bc998f12e9528dba1d7582e59c95ad4569263
 </web-app>
 
 
