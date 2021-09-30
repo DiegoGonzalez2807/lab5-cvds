@@ -2,6 +2,9 @@
 ## INTEGRANTES  
 - Cristian Andres Castellanos Fino
 - Diego Alejandro Gonzalez Gualteros  
+## BADGES
+[![CircleCI](https://circleci.com/gh/DiegoGonzalez2807/lab5-cvds/tree/main.svg?style=svg)](https://circleci.com/gh/DiegoGonzalez2807/lab5-cvds/tree/main)  
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/eb8f339c39aa4e5bb14d4e1c45530bf5)](https://www.codacy.com/gh/DiegoGonzalez2807/lab5-cvds/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DiegoGonzalez2807/lab5-cvds&amp;utm_campaign=Badge_Grade)
 ## PARTE I
 ### Protocolo Telnet  
   Para este punto hacemos uso del protocolo telnet con el _host_ ```www.escuelaing.edu.co``` _puerto_ ```80``` y el _recurso_ ```/sssss/abc.html```  
