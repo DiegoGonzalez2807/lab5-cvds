@@ -22,6 +22,8 @@
                 width:100px; 
                 top:50%; 
                 left:42%; 
+                border: black;
+                background-color: white;
             }
             .cambioPosicion{
                 position:relative; 
@@ -55,7 +57,7 @@
                 display: block;
             }
             .seccion{
-                margin-top: 2rem;
+                
                 margin-bottom: 2rem;
             }
             .contenedor-footer{
@@ -67,10 +69,14 @@
                 display: grid;
                 grid-template-columns: 50% 50%;
             }
+            .StiloForm{
+                background-color: gray;
+            }
+
         </style>
 
 
-            <header class="site-header">
+            <header style="color: white;" class="site-header">
                 <h1 class="fw-300 centrarTexto">Calculadora Bean</h1>
                 <nav id="navegacion" class='navegacion'>
                     <a href="Media.html">Media</a>
@@ -79,7 +85,7 @@
                     <a href="Varianza.html">Varianza</a>
                 </nav>
             </header>
-            <h:form id="calculadora_form">
+            <h:form class="StiloForm" id="calculadora_form">
                 <h:panelGrid columns="2">
                     <h:outputLabel value="Lista a calcular:"/> 
 			        <h:inputText id="lista" type="text" binding="#{input}" /> 
@@ -109,7 +115,7 @@
             </h:form>
             <footer class="site-footer seccion">
                 <div class="contenedor contenedor-footer">
-                    <p class="copyright">Autores: Diego Gonzalez - Cristian Castellanos</p>
+                    <p style="color:white" class="copyright">Autores: Diego Gonzalez - Cristian Castellanos</p>
                 </div>
             </footer>
     </h:body>

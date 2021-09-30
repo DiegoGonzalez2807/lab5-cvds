@@ -14,14 +14,11 @@ h1{
 .centrarTexto{
     text-align: center;
 }
-<<<<<<< HEAD
-=======
 .contenedor{         
     width: 95%;    /*Funcion utilizada para centrar lo que sea con letras*/
     max-width: 120rem;
     margin : 0 auto;
 }
->>>>>>> 2920007586f0a6e995b30568f9d40b0cddcf1c45
 
 /********************PANEL DE NAVEGACION*********************/
 /*Para cada opción del panel de navegación, se coloca una letra de color blanco y le da un margen entre cada boton */
@@ -41,19 +38,11 @@ h1{
     display: grid;
     grid-template-columns: 50% 50%;
 }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 2920007586f0a6e995b30568f9d40b0cddcf1c45
 div.vertical-line{
     width: 1px; 
     background-color: black; 
     height: 100%; 
     float: left; 
-<<<<<<< HEAD
-  }
-=======
 }
 .contenedor-footer{
     display:block;
@@ -87,5 +76,4 @@ button{height:20px;
     width:100px; 
     top:50%; 
     left:42%;}
->>>>>>> 2920007586f0a6e995b30568f9d40b0cddcf1c45
 
