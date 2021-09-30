@@ -20,7 +20,26 @@
         </nav>
     </header>
     <h:body>
-        <div class="vertical-line"></div>
+        <h:form>
+            <h1 class="fw-300 centrarTexto"> Calculo de la Media</h1>
+            <div class="contenido">
+                <div class="">
+                    <p class="fw-300 centrarTexto">Deme la lista a calcular</p>
+                    <input type="text" name="listaNumeros">
+                    <br></br>
+                    <h:commandButton value="Calcular"  update="calculadora_form" actionListener="#{CalculadoraBean.calcular(input.value)}"/>
+                </div>
+                <div class="">
+                    <p class="fw-300 centrarTexto">La media del arreglo es:
+                    </p>
+                </div>
+            </div>
+            <footer class="site-footer seccion">
+                <div class="contenedor contenedor-footer">
+                    <p class="copyright">Autores: Diego Gonzalez - Cristian Castellanos &copy;</p>
+                </div>
+            </footer>
+        </h:form>
     </h:body>
 </html>
 

@@ -20,7 +20,39 @@
         </nav>
     </header>
     <h:body>
+<<<<<<< HEAD
         <div class="vertical-line"></div>
+=======
+            <h:form id="calculadora_form">
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Lista a calcular:"/> 
+                    <h:inputText id="lista" type="text" binding="#{input}" /> 
+
+                    <!--Titulo de Media-->
+                    <p:outputLabel value="Media"></p:outputLabel>
+                    <!--Valor de la media-->
+                    <p:outputLabel value="#{CalculadoraBean.media}"></p:outputLabel>
+
+                    <!--Titulo de Desviación estandar-->
+                    <p:outputLabel value="Desviación estandar"></p:outputLabel>
+                    <!--Valor de la Desviación estandar-->
+                    <p:outputLabel value="#{CalculadoraBean.desviacionEstandar}"></p:outputLabel>
+
+                    <!--Titulo de Varianza-->
+                    <p:outputLabel value="Varianza"></p:outputLabel>
+                    <!--Valor de la Varianza-->
+                    <p:outputLabel value="#{CalculadoraBean.varianza}"></p:outputLabel>
+
+                    <h:commandButton value="Calcular"  update="calculadora_form" actionListener="#{CalculadoraBean.calcular(input.value)}"/>
+                    <h:commandButton value="Reiniciar" update="calculadora_form" actionListener="#{CalculadoraBean.restart}"/>
+                </h:panelGrid>
+            </h:form>
+        <h:footer class="site-footer seccion">
+            <div class="contenedor contenedor-footer">
+                <p class="copyright">Autores: Diego Gonzalez - Cristian Castellanos &copy;</p>
+            </div>
+        </footer>
+>>>>>>> 2920007586f0a6e995b30568f9d40b0cddcf1c45
     </h:body>
 </html>
 

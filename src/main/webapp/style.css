@@ -14,6 +14,11 @@ h1{
 .centrarTexto{
     text-align: center;
 }
+.contenedor{         
+    width: 95%;    /*Funcion utilizada para centrar lo que sea con letras*/
+    max-width: 120rem;
+    margin : 0 auto;
+}
 
 /********************PANEL DE NAVEGACION*********************/
 /*Para cada opción del panel de navegación, se coloca una letra de color blanco y le da un margen entre cada boton */
@@ -33,12 +38,42 @@ h1{
     display: grid;
     grid-template-columns: 50% 50%;
 }
-
-
 div.vertical-line{
     width: 1px; 
     background-color: black; 
     height: 100%; 
     float: left; 
-  }
+}
+.contenedor-footer{
+    display:block;
+    padding: 2rem 0;
+    text-align: center;
+} 
+.site-footer{
+    background-color: rgb(37, 32, 32);
+    margin: 0;
+}
+.site-footer nav{
+    display: block;
+}
+.seccion{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+/*Se usa para que el boton de calcular esté centrado en la primera mitad de la pagina*/
+#calcula
+button{height:20px; 
+    position:relative; 
+    margin-bottom: 2rem; 
+    width:100px; 
+    top:50%; 
+    left:42%;}
+
+/*Se usa para que el boton de reinicio esté centrado en la primera mitad de la pagina*/
+#reinicia
+button{height:20px; 
+    position:relative; 
+    width:100px; 
+    top:50%; 
+    left:42%;}
 
