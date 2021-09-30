@@ -4,23 +4,114 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
-      <link rel="stylesheet" href="style.css"></link>
       <link rel="stylesheet" href="normalize.css"></link>
     <h:head>
-        <title>Calculadora</title>
+        <title>Calculadora BEAN</title>
     </h:head>
-    <header class="site-header">
-        <h1 class="fw-300 centrarTexto">Calculadora Bean</h1>
-
-        <nav id="navegacion" class='navegacion'>
-            <a href="Media.html">Media</a>
-            <a href="Moda.html">Moda</a>
-            <a href="Desviacion.html">Desviacion Estandar</a>
-            <a href="Varianza.html">Varianza</a>
-        </nav>
-    </header>
     <h:body>
-        <div class="vertical-line"></div>
+        <style type="text/css">
+            .fw-700{
+                font-weight: 700;
+            }
+            .fw-300{
+                font-weight: 300;
+            }
+            .boton{
+                height:20px; 
+                position:relative; 
+                width:100px; 
+                top:50%; 
+                left:42%; 
+            }
+            .cambioPosicion{
+                position:relative; 
+                left:20%;
+                margin-bottom: 1rem;
+                margin-top: 1rem;
+            }
+            /*Centra el texto deseado*/
+            .centrarTexto{
+                text-align: center;
+            }
+            .site-header{
+                background-color: rgb(37, 32, 32);
+                padding: 1rem 0 3rem 0;
+            }
+            .navegacion a {
+                color : white;
+                text-decoration: none;
+                text-align: center;
+                font-size: 1.8rem;
+                display: inline-block;
+                margin-bottom: 1.4rem;
+                margin-right: 2rem;
+                width: 22%;
+            }
+            .site-footer{
+                background-color: rgb(37, 32, 32);
+                margin: 0;
+            }
+            .site-footer nav{
+                display: block;
+            }
+            .seccion{
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+            }
+            .contenedor-footer{
+                display:block;
+                padding: 2rem 0;
+                text-align: center;
+            } 
+            .contenido{
+                display: grid;
+                grid-template-columns: 50% 50%;
+            }
+        </style>
+
+
+            <header class="site-header">
+                <h1 class="fw-300 centrarTexto">Calculadora Bean</h1>
+                <nav id="navegacion" class='navegacion'>
+                    <a href="Media.html">Media</a>
+                    <a href="Moda.html">Moda</a>
+                    <a href="Desviacion.html">Desviacion Estandar</a>
+                    <a href="Varianza.html">Varianza</a>
+                </nav>
+            </header>
+            <h:form id="calculadora_form">
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Lista a calcular:"/> 
+			        <h:inputText id="lista" type="text" binding="#{input}" /> 
+                    <div class="contenido">
+                        <div>
+                            <!--Titulo de Media-->
+                            <p:outputLabel class="fw-700" value="Media"></p:outputLabel>
+                            <!--Valor de la media-->
+                            <p:outputLabel class="cambioPosicion" value="#{CalculadoraBean.media}"></p:outputLabel>
+                        </div>
+                        <div>
+                            <!--Titulo de Desviación estandar-->
+                            <p:outputLabel class="fw-700" value="Desviación estandar"></p:outputLabel>
+                            <!--Valor de la Desviación estandar-->
+                            <p:outputLabel class="cambioPosicion" value="#{CalculadoraBean.desviacionEstandar}"></p:outputLabel>
+
+                            <!--Titulo de Varianza-->
+                            <p:outputLabel class="fw-700" value="Varianza"></p:outputLabel>
+                            <!--Valor de la Varianza-->
+                            <p:outputLabel class="cambioPosicion" value="#{CalculadoraBean.varianza}"></p:outputLabel>
+
+                            <h:commandButton class="boton" value="Calcular"  update="calculadora_form" actionListener="#{CalculadoraBean.calcular(input.value)}"/>
+                            <h:commandButton class="boton" value="Reiniciar" update="calculadora_form" actionListener="#{CalculadoraBean.restart}"/>
+                        </div>
+                    </div>
+                </h:panelGrid>
+            </h:form>
+            <footer class="site-footer seccion">
+                <div class="contenedor contenedor-footer">
+                    <p class="copyright">Autores: Diego Gonzalez - Cristian Castellanos</p>
+                </div>
+            </footer>
     </h:body>
 </html>
 
