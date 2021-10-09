@@ -8,7 +8,7 @@
 ## PARTE I
 ### Protocolo Telnet  
   Para este punto hacemos uso del protocolo telnet con el _host_ ```www.escuelaing.edu.co``` _puerto_ ```80``` y el _recurso_ ```/sssss/abc.html```  
-  ![img1](Imagenes/PARTE I/img1.jpg)  
+  ![img1](https://github.com/DiegoGonzalez2807/lab5-cvds/blob/0baf676fa57784518744f0a15e483b42c73dce3d/Imagenes/PARTE%20I/img1.jpg)  
   En este caso se retorno el error _301 Moved Permanently_ es decir el archivo fue movido a otra dirección, como este exiten otro tipo de mensajes para dnotar distintos casos. Se dividen en un grupo de 5.  
   1. Respuestas informativas (100–199)
   2. Respuestas satisfactorias (200–299)
@@ -17,15 +17,15 @@
   5. Errores de los servidores (500–599)  
 
 Ahora realizaremos una conexion telnet con el _host_ ```www.httpbin.org```, _puerto_ ```80``` y el _recurso_ ```/html```.  
-![img2](Imagenes/PARTE I/img3.jpg)  
+![img2](https://github.com/DiegoGonzalez2807/lab5-cvds/blob/0baf676fa57784518744f0a15e483b42c73dce3d/Imagenes/PARTE%20I/img2.jpg)  
 Como resultado se obtuvo la informacion del request, como el mensaje enviado fue _200_ es decir correcto, se nos envio el recurso, el cual se denota en el codigo html.  
 
 De la misma manera como podemos hacer un request con telnet, exite otro metodo que es con el comando ```curl```, este comando nos permite generar un requets a la direccion que le pidamos. Al hacer uso del comando, se ve que la peticion fue aceptada y nos envia el recurso.  
-![img3](Imagenes/PARTE I/img3.jpg)  
+![img3](https://github.com/DiegoGonzalez2807/lab5-cvds/blob/0baf676fa57784518744f0a15e483b42c73dce3d/Imagenes/PARTE%20I/img3.jpg)  
 De la misma manera existen comandos para _curl_ como lo es ```-i```, en este caso se nos mostro ademas del recurso pedido, la informacion del request enviado, con su mensaje de respuesta, la longitud del archivo, entre otros.  
-![img4](Imagenes/PARTE I/img5.jpg)  
+![img4](https://github.com/DiegoGonzalez2807/lab5-cvds/blob/0baf676fa57784518744f0a15e483b42c73dce3d/Imagenes/PARTE%20I/img5.png)  
 Si hacemos uso del comando ```-v``` se nos mostrara ademas de la misma informacion que con _-i_, una mayor cantidad de informacion como es la informacion de la peticion realizada.  
-![img5](Imagenes/PARTE I/img4.jpg)  
+![img5](https://github.com/DiegoGonzalez2807/lab5-cvds/blob/0baf676fa57784518744f0a15e483b42c73dce3d/Imagenes/PARTE%20I/img4.png)  
 ## PARTE II
 ### Servlet 
   Para este punto del laboratorio se genero un proyecto maven con el arquetipo web estandar de maven. Al compilar y empaquetar el proyecto, observamos que no se encuentra ningun tipo de error.  
